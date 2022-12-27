@@ -7,7 +7,7 @@
 body{
     position: relative;
 
-    width: 100vw;
+    min-width: 100vw;
     height: 100vh;
     
 }
@@ -19,18 +19,17 @@ header{
 
     display: flex;
 
-    width: 100vw;
-    height: 70px;
+    width: 100%;
+    min-height: 70px;
 
 }
+
 .brand{
-    position: absolute;
+    position: relative;
     width: 100%;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-flow: column;
 }
 .brand-name{
     font-family: 'Caramel', cursive;
@@ -43,6 +42,7 @@ header{
     font-family: 'Covered By Your Grace', cursive;
     font-size: 15px;
 }
+
 /*toggle sidebar*/
 .toggle{
     position: relative;
@@ -56,7 +56,7 @@ header{
     width: 250px;
     height: 100vh;
     right: 0;
-    top: 0;
+    top: 11px;
     margin-top: 70px;
 
     transform: translateX(250px);
@@ -64,7 +64,9 @@ header{
     transition: transform 250ms ease-in-out;
 
     font-family: cursive, serif;
-    background: #1f0003b7;
+    /*background: #1f0003b7;*/
+     background: #1f0003b7;
+     backdrop-filter: blur(2px);
     z-index: 1000;   
 }
 .menu{
@@ -162,10 +164,10 @@ input#openside{
 
     top: 0;
     left: 0;
-    width: 400%;
+    width: 500%;
     height: 470px;
 
-    animation: animate 15s linear infinite;
+    animation: animate 15s ease-in-out infinite;
     animation-play-state: running;
     cursor: pointer;
 }
@@ -176,7 +178,7 @@ input#openside{
     position: relative;
 
     float: left;
-    width: 25%;
+    width: 20%;
     height: 100%;
     overflow: hidden;
 }
@@ -245,9 +247,9 @@ input#openside{
 
     overflow: hidden;
 }
-::-webkit-scrollbar{
+/*::-webkit-scrollbar{
     display: none;
-}
+}*/
 .shop .hijabp{
     position: relative;
 
@@ -304,12 +306,13 @@ input#openside{
     padding-left: 1.5rem;
 
 }
-.addv span{
+.addv .purple{
     color: #942d3e;
     font-weight: bold;
 }
 footer{
     width: 100%;
+    padding: 30px;
 
     background:url(./images/t.jpeg);
     background-size: cover;
@@ -354,41 +357,33 @@ footer .social li img:hover{
 /* keyframes for animation**/
 
 @keyframes animate{
-    0%
-    {
-        left: 0;
-    }
-    25%
-    {
-        left: -50%;
-    }
-    
-    26%
-    {
+    0% {
+        left: 0%;
+      }
+      20% {
         left: -100%;
-    }
-    50%
-    {
-        left: -150%;
-    }
-    51%
-    {
+      }
+      25% {
+        left: -100%;
+      }
+      45% {
         left: -200%;
-    }
-    75%
-    {
-        left: -250%;
-    }
-    76%
-    {
+      }
+      50% {
+        left: -200%;
+      }
+      70% {
         left: -300%;
-
-    }
-    100%
-    {
+      }
+      75% {
         left: -300%;
-
-    }
+      }
+      95% {
+        left: -400%;
+      }
+      100% {
+        left: -400%;
+      }
 }
 /*header animation keyframe*/
 @keyframes web{
